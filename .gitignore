@@ -1,0 +1,4 @@
+*.npy
+*.png
+*.pdf
+converge_iteration.py
