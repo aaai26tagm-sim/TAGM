@@ -66,7 +66,7 @@ for ax in [ax1, ax2]:
 
 ax1.set_xlabel(r'Iterations, $k$', fontsize=18)
 # ax2.set_xlabel(r'Iterations, $k$', fontsize=18)
-ax1.set_ylabel(r'$\|f(x) - f(x^\star)\|$', fontsize=18)
+ax1.set_ylabel(r'$|f(x) - f(x^\star)|$', fontsize=18)
 
 # Hide spines between axes
 ax1.spines['right'].set_visible(False)
@@ -110,6 +110,7 @@ legend2 = ax2.legend(handles=prob_lines, title=r'\textbf{Probability}', loc='upp
 
 plt.tight_layout()
 plt.subplots_adjust(wspace=0.08)  # adjust spacing between axes
-plt.savefig("Alg_comparison_convergence.pdf", format='pdf', bbox_inches='tight')
+# plt.savefig("Alg_comparison_convergence.pdf", format='pdf', bbox_inches='tight')
+# plt.savefig("Alg_comparison_convergence.png", dpi=800)
 plt.show()
 
