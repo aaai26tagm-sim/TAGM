@@ -393,6 +393,7 @@ if upDelay == 1:
 
         for k in range(len(tvec)):
             # Coin flip
+            # This is line 3 in Algorithm 1 implementing the delay in update with probabilty p
             upif = np.where(np.random.rand(N) < probCom)[0] if upDelay == 1 else np.arange(N)
 
             # Copy over states for agents that don't update
@@ -414,6 +415,7 @@ if upDelay == 1:
                     nag_futures = []
                     gm_futures = []
                     
+                    # This is line 4 in Algorithm 1
                     for cur_agent in upif:
                         A_i = A_train_list[cur_agent]   
                         gd_futures.append(executor.submit(
@@ -444,12 +446,14 @@ if upDelay == 1:
                         future.result()  # This will raise any exceptions that occurred
             # Communication phase
             # Coin flip
+            # this is line 10 in Algorithm 1 implementing the delay in communications with probabilty p
             comif = np.where(np.random.rand(N) < probCom)[0] if comDelay == 1 else np.arange(N)
 
             if len(comif) > 0:
                 with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
                     comm_futures = []
                     for cur_agent in comif:
+                        # This is line 6 and 11 in Algorithm 1, they are combined here
                         comm_futures.append(executor.submit(
                             communicate_agent_updates, cur_agent, k, neigh, N, features_per_agent,
                             x_GD, x_HB, y_HB, x_NAG, y_NAG, x_GM, y_GM
@@ -460,6 +464,7 @@ if upDelay == 1:
                         future.result()
             else:
                 # No communication - copy states
+                # This is line 14 - 16 in Algorithm 1 
                 for n in range(N):
                     x_GD[k+1, :, :, n] = x_GD[k, :, :, n]
                     x_HB[k+1, :, :, n] = x_HB[k, :, :, n]
