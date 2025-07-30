@@ -1,7 +1,7 @@
-Distributed Asynchronous Generalized Momentum Algorithms Without Delay Bounds Simulation 
+A Distributed Asynchronous Generalized Momentum Algorithm Without Delay Bounds Simulation 
 ============
 
-This is the simulation for the "Distributed Asynchronous Generalized Momentum Algorithms Without Delay Bounds" paper. The example data set used here is the Fashion-MNIST dataset. A multi-class logarithmic regression model is used for benchmarking.
+This is the simulation for the "A Distributed Asynchronous Generalized Momentum Algorithm Without Delay Bounds" paper. The example data set used here is the Fashion-MNIST dataset. A multi-class logarithmic regression model is used for benchmarking.
 
 Comparisons between algorithms with update and communication probabilities of 0.5, 0.1, and 0.05:
 ![Description](Alg_comparison_convergence.png)
